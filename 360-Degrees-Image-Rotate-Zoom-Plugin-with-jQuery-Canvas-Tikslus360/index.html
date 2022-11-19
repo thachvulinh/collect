@@ -1,0 +1,134 @@
+<!DOCTYPE HTML>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8"><![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9"><![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js"><!--<![endif]-->
+<head>
+<title>jQuery Tikslus360 Demos</title>
+<link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script type="text/javascript" src="js/tikslus360.js"></script>
+<script type="text/javascript" src="js/rainbow.min.js"></script>
+<link rel="stylesheet" href="css/normalize.css" />
+<link rel="stylesheet" href="css/tikslus360.css" />
+<link rel="stylesheet" href="css/github.css" />
+<style>
+body{
+padding:20px;
+}
+</style>
+</head>
+<body><div id="jquery-script-menu">
+<div class="jquery-script-center">
+<ul>
+<li><a href="http://www.jqueryscript.net/zoom/360-Degrees-Image-Rotate-Zoom-Plugin-with-jQuery-Canvas-Tikslus360.html">Download This Plugin</a></li>
+<li><a href="http://www.jqueryscript.net/">Back To jQueryScript.Net</a></li>
+</ul>
+<div class="jquery-script-ads"><script type="text/javascript"><!--
+google_ad_client = "ca-pub-2783044520727903";
+/* jQuery_demo */
+google_ad_slot = "2780937993";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></div>
+<div class="jquery-script-clear"></div>
+</div>
+</div>
+	<h1 class="main_heading" style="margin-top:150px;">jQuery Tikslus360 Demos</h1>
+                
+               
+		
+		<h4 class="heading">Examples</h4>
+		
+		<h2 class="medium_heading">Example 1 - auto rotate off </h2>
+		<p>HTML</P>
+		<PRE>
+		<code data-language="html">
+		<div id="view360">
+		<a href="#" class="autorotate">Auto rotate</a>
+		</div>
+		</code>
+		</PRE>
+		<p>Javascript</p>
+		<pre>
+		<code data-language="javascript">
+		
+		$(document).ready(function(){
+		$("#view360").tikslus360({imageDir:'examples/car',imageCount:36,imageExt:'jpg',canvasID:'mycar',canvasWidth:640,canvasHeight:480});
+		});
+	
+		</code>
+		</pre>
+		
+		<div id="view360">
+		<a href="#" class="autorotate">Auto rotate</a>
+		</div>
+		
+		
+		<script type="text/javascript" src="js/tikslus360.js"></script>
+		<link rel="stylesheet" href="css/tikslus360.css" />
+		<script language="javascript">
+		$(window).load(function(){
+		$("#view360").tikslus360({imageDir:'images',imageCount:36,imageExt:'jpg',canvasID:'mycar',canvasWidth:640,canvasHeight:480,autoRotate:false});
+		});
+		</script>
+		<p class="note">
+		Click and drag to zoom the image.
+		</p>
+		
+		
+		
+		<h2 class="medium_heading">Example 2 - auto rotate on </h2>
+		<p>HTML</P>
+		<PRE>
+		<code data-language="html">
+		<div id="view360_example1">
+		<a href="#" class="autorotate">Auto rotate</a>
+		</div>
+		</code>
+		</PRE>
+		<p>Javascript</p>
+		<pre>
+		<code data-language="javascript">
+		
+		$(document).ready(function(){
+		$("#view360_example1").tikslus360({imageDir:'examples/car',imageCount:36,imageExt:'jpg',canvasID:'canvas1',canvasWidth:640,canvasHeight:480,autoRotate:true});
+		});
+		
+		</code>
+		</pre>
+		
+		<div id="view360_example">
+		<a href="#" class="autorotate">Auto rotate</a>
+		</div>
+		
+		<script language="javascript">
+		$(window).load(function(){
+		$("#view360_example").tikslus360({imageDir:'images',imageCount:36,imageExt:'jpg',canvasID:'canvas1',canvasWidth:640,canvasHeight:480,autoRotate:true});
+		});
+		</script>
+                		
+
+</body>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36251023-1']);
+  _gaq.push(['_setDomainName', 'jqueryscript.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+
+</html>
