@@ -1,0 +1,1886 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Example Scss</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" >
+</head>
+<body>
+	<div class="body">
+		<div class="header">
+			<div class="header-inner-top">
+				<div class="header-inner-inner-left d-none d-sm-block">
+					<div class="menu-multip">
+						<ul class="menu">
+							<li class="parent">
+								<a href="#">Điện thoại: 0834 669814</a>
+								<!-- <ul class="child">
+									<li class="parent"><a href="#">Video Games <span class="expand">►</span></a>
+										<ul class="child">
+											<li><a href="#">sdfsdf</a></li>
+											<li><a href="#">Bike Race</a></li>
+											<li><a href="#">Fishing</a></li>
+										</ul>
+									</li>
+									<li><a href="#">Barbies</a></li>
+									<li><a href="#">Teddy Bear</a></li>
+									<li><a href="#">Golf Set</a></li>
+								</ul> -->
+							</li>
+							<li class="parent"><a href="#">Liên hệ: Vĩnh Phú, Thoại Sơn, An Giang</a> </li>
+						</ul>
+					</div>
+				</div>
+				<div class="header-inner-inner-right ">
+					<div class="menu-multip">
+						<ul class="menu">
+							<li class="parent"><a href="#">Giỏ hàng</a> </li>
+							<li class="parent-left">
+								<a href="#">Thạch Vũ Linh</a>
+								<ul class="child">
+									<!-- <li class="parent"><a href="#">Video Games <span class="expand">◀</span></a>
+										<ul class="child">
+											<li><a href="#">sdfsdf</a></li>
+											<li><a href="#">Bike Race</a></li>
+											<li><a href="#">Fishing</a></li>
+										</ul>
+									</li> -->
+									<li><a href="#">Quản lý</a></li>
+									<li><a href="#">Đổi mật khẩu</a></li>
+									<li><a href="#">Đăng xuất</a></li>
+								</ul>
+							</li>
+							
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="header-inner-bottom">
+				<div class="header-inner-inner-left">
+					<div class="logo">
+						<img src="data:image/png;base64,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" >
+						<p><a href="#">Tên cửa hàng</a></p>
+					</div>
+				</div>
+				<div class="header-inner-inner-right">
+					<span class="d-xl-none" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+					<div id="menu-main" class="d-none d-xl-block">
+						<div class="menu-multip">
+							<ul class="menu">
+								<li class="parent first"><a href="#">Trang chủ</a> </li>
+								<li class="parent-left first">
+									<a href="#">Sản phẩm <span class="expand"> ►</span></a>
+									<ul class="child first-dropdown">
+										<li><a href="#">Quản lý dfs sdfsd sdfs dfd</a></li>
+										<li><a href="#">Đổi mật khẩu</a></li>
+										<li><a href="#">Đăng xuất</a></li>
+									</ul>
+								</li>
+								<li class="parent first"><a href="#top-list-item">Danh sách</a> </li>
+								<li class="parent first"><a href="#top-carousel-multip"> Nhiều Slice</a> </li>
+								<li class="parent first"><a href="#top-button"> Nút</a> </li>
+								
+								<!-- <li class="parent-left first">
+									<a href="#">Điện thoại <span class="expand">►</span></a>
+									<ul class="child first-dropdown ">
+										<li class="parent"><a href="#">Video Games <span class="expand">►</span></a>
+										<ul class="child">
+												<li><a href="#">sdfsdf</a></li>
+												<li><a href="#">Bike Race</a></li>
+												<li><a href="#">Fishing</a></li>
+											</ul>
+										</li>
+										<li><a href="#">Barbies</a></li>
+										<li><a href="#">Teddy Bear</a></li>
+										<li><a href="#">Golf Set</a></li>
+									</ul>
+								</li>
+								<li class="parent first">
+									<a href="#">Điện thoại <span class="expand">►</span></a>
+									<ul class="child first-dropdown ">
+										<li class="parent"><a href="#">Video Games <span class="expand">►</span></a>
+										<ul class="child">
+												<li><a href="#">sdfsdf</a></li>
+												<li><a href="#">Bike Race</a></li>
+												<li><a href="#">Fishing</a></li>
+											</ul>
+										</li>
+										<li><a href="#">Barbies</a></li>
+										<li><a href="#">Teddy Bear</a></li>
+										<li><a href="#">Golf Set</a></li>
+									</ul>
+								</li> -->
+							</ul>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+			<marquee width="100%" scrolldelay="180">Xin chào bạn</marquee>
+		</div>
+		
+		<div class="content">
+			<div class="container-fluid">
+				<div class="row bg-dark">
+					<div class="col-md-3">
+						<div class="menu-lengthwise-multip mt-3 d-none d-xl-block">
+							<ul>
+								<li><a href="#">Trang chủ</a></li>
+								<li>
+									<a href="#">Tin tức <span class="expand">►</span></a>
+									<ul class="sub-menu">
+										<li><a href="#">WordPress</a></li>
+										<li><a href="#">SEO</a></li>
+										<li><a href="#">Hosting</a></li>
+									</ul>
+								</li>
+								<li><a href="#">Tin tức <span class="expand">►</span></a>
+									<ul class="sub-menu">
+										<li><a href="#">WordPress</a></li>
+										<li><a href="#">SEO</a></li>
+										<li><a href="#">Hosting</a></li>
+									</ul>
+								</li>
+								<li><a href="#">Sản phẩm</a></li>
+								<li><a href="#">Liên hệ</a></li>
+								<li><a href="#">Liên hệ</a></li>
+								<li><a href="#">Liên hệ</a></li>
+								<li><a href="#">Liên hệ</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-md-9">
+						<div id="carousel_content" class="carousel slide mt-3 mb-3" data-ride="carousel">
+							<ol class="carousel-indicators">
+							  <li data-target="#carousel_content" data-slide-to="0" class="active"></li>
+							  <li data-target="#carousel_content" data-slide-to="1"></li>
+							  <li data-target="#carousel_content" data-slide-to="2"></li>
+							</ol>
+							<div class="carousel-inner">
+							  <div class="carousel-item active">
+								<img class="d-block w-100" style="height:318px;" src="data:image/jpeg;base64,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" alt="First slide">
+								<div class="carousel-caption d-none d-md-block">
+									<h5>First slide label</h5>
+									<p>Some representative placeholder content for the first slide.</p>
+								</div>
+							</div>
+							  <div class="carousel-item">
+								<img class="d-block w-100" style="height:318px;" src="data:image/jpeg;base64,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" alt="Second slide">
+								<div class="carousel-caption d-none d-md-block">
+									<h5>First slide label</h5>
+									<p>Some representative placeholder content for the first slide.</p>
+								</div>
+							</div>
+							  <div class="carousel-item">
+								<img class="d-block w-100" style="height:318px;" src="data:image/jpeg;base64,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" alt="Third slide">
+								<div class="carousel-caption d-none d-md-block">
+									<h5>First slide label</h5>
+									<p>Some representative placeholder content for the first slide.</p>
+								</div>
+							</div>
+							</div>
+							<a class="carousel-control-prev" href="#carousel_content" role="button" data-slide="prev">
+							  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+							  <span class="sr-only">Previous</span>
+							</a>
+							<a class="carousel-control-next" href="#carousel_content" role="button" data-slide="next">
+							  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+							  <span class="sr-only">Next</span>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div id="top-carousel-multip"></div>
+				<div class="top-content">
+					<div class="container-fluid">
+						<div class="title-head">
+							<h1>Sản phẩm nổi bật</h1>
+							<img src="img/header-img.png" >
+						</div>
+						<div id="carousel-multip" class="carousel slide carousel-multip" data-ride="carousel">
+							<div class="carousel-inner row w-100 mx-auto list-item-12" role="listbox">
+								<div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3 active">
+									<a href="#">
+										<div class="card " >
+											<img class="card-img-top img-fluid mx-auto d-block" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/1.jpg" alt="Card image cap">
+											<div class="card-body">
+												<h5 class="card-title">Card title</h5>
+												<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+												<a href="#" class="btn btn-primary">Go somewhere</a>
+											</div>
+										</div>
+									</a>
+								</div>
+								<div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+									<a href="#">
+										<div class="card" >
+											<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/2.jpg" alt="Card image cap">
+											<div class="card-body">
+												<h5 class="card-title">Card title</h5>
+												<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+												<a href="#" class="btn btn-primary">Go somewhere</a>
+											</div>
+										</div>
+									</a>
+								</div>
+								<div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+									<a href="#">
+										<div class="card " >
+											<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/3.jpg" alt="Card image cap">
+											<div class="card-body">
+												<h5 class="card-title">Card title</h5>
+												<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+												<a href="#" class="btn btn-primary">Go somewhere</a>
+											</div>
+										</div>
+									</a>
+								</div>
+								<div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+									<a href="#">
+										<div class="card" >
+											<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/4.jpg" alt="Card image cap">
+											<div class="card-body">
+												<h5 class="card-title">Card title</h5>
+												<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+												<a href="#" class="btn btn-primary">Go somewhere</a>
+											</div>
+										</div>
+									</a>
+								</div>
+								<div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+									<a href="#">
+										<div class="card " >
+											<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/5.jpg" alt="Card image cap">
+											<div class="card-body">
+												<h5 class="card-title">Card title</h5>
+												<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+												<a href="#" class="btn btn-primary">Go somewhere</a>
+											</div>
+										</div>
+									</a>	
+								</div>
+								<div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+									<a href="#">
+										<div class="card " >
+											<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/6.jpg" alt="Card image cap">
+											<div class="card-body">
+												<h5 class="card-title">Card title</h5>
+												<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+												<a href="#" class="btn btn-primary">Go somewhere</a>
+											</div>
+										</div>
+									</a>
+								</div>
+								<div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+									<a href="#">
+										<div class="card" >
+											<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/7.jpg" alt="Card image cap">
+											<div class="card-body">
+												<h5 class="card-title">Card title</h5>
+												<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+												<a href="#" class="btn btn-primary">Go somewhere</a>
+											</div>
+										</div>
+									</a>
+								</div>
+								<div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+									<a href="#">
+										<div class="card item_caro" >
+											<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/8.jpg" alt="Card image cap">
+											<div class="card-body">
+												<h5 class="card-title">Card title</h5>
+												<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+												<a href="#" class="btn btn-primary">Go somewhere</a>
+											</div>
+										</div>
+									</a>
+								</div>
+							</div>
+							<a class="carousel-control-prev " style="left:0px;" href="#carousel-multip" role="button" data-slide="prev">
+								<span class="carousel-control-prev-icon text-dark" aria-hidden="true"></span>
+								<span class="sr-only">Previous</span>
+							</a>
+							<a class="carousel-control-next " style="right:0px;" href="#carousel-multip" role="button" data-slide="next">
+								<span class="carousel-control-next-icon text-dark" aria-hidden="true"></span>
+								<span class="sr-only">Next</span>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div id="top-list-item"></div>
+				<div class="list-item-1">
+					<div class="title-head">
+						<h1>List Item 1</h1>
+						<img src="img/header-img.png" >
+					</div>
+					<div class="row">
+						<div class="col-md-3">
+							<a href="#">
+								<div class="card">
+									<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/8.jpg" alt="Card image cap">
+									<div class="card-body">
+										<h5 class="card-title">Card title</h5>
+										<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+									</div>
+									<div class="card-footer">
+										<small class="text-muted">Last updated 3 mins ago</small>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-3">
+							<a href="#">
+								<div class="card">
+									<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/8.jpg" alt="Card image cap">
+									<div class="card-body">
+										<h5 class="card-title">Card title</h5>
+										<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+									</div>
+									<div class="card-footer">
+										<small class="text-muted">Last updated 3 mins ago</small>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-3">
+							<a href="#">
+								<div class="card">
+									<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/8.jpg" alt="Card image cap">
+									<div class="card-body">
+										<h5 class="card-title">Card title</h5>
+										<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+									</div>
+									<div class="card-footer">
+										<small class="text-muted">Last updated 3 mins ago</small>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-3">
+							<a href="#">
+								<div class="card">
+									<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/8.jpg" alt="Card image cap">
+									<div class="card-body">
+										<h5 class="card-title">Card title</h5>
+										<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+									</div>
+									<div class="card-footer">
+										<small class="text-muted">Last updated 3 mins ago</small>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="list-item-2">
+					<div class="title-head">
+						<h1>List Item 2</h1>
+						<img src="img/header-img.png" >
+					</div>
+					<div class="row">
+						<div class="col-md-3">
+							<a href="#">
+								<div class="card">
+									<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/8.jpg" alt="Card image cap">
+									<div class="overlay">
+										<div class="text">
+											<h5 class="card-title">Card title</h5>
+											<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+										</div>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-3">
+							<a href="#">
+								<div class="card">
+									<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/8.jpg" alt="Card image cap">
+									<div class="overlay">
+										<div class="text">
+											<h5 class="card-title">Card title</h5>
+											<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+										</div>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-3">
+							<a href="#">
+								<div class="card">
+									<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/8.jpg" alt="Card image cap">
+									<div class="overlay">
+										<div class="text">
+											<h5 class="card-title">Card title</h5>
+											<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+										</div>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-3">
+							<a href="#">
+								<div class="card">
+									<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/8.jpg" alt="Card image cap">
+									<div class="overlay">
+										<div class="text">
+											<h5 class="card-title">Card title</h5>
+											<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+										</div>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="list-item-3">
+					<div class="title-head">
+						<h1>List Item 3</h1>
+						<img src="img/header-img.png" >
+					</div>
+					<div class="row">
+						<div class="col-md-3">
+							<a href="#">
+								<div class="card">
+									<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/8.jpg" alt="Card image cap">
+									<div class="overlay">
+										<div class="text">
+											<h5 class="card-title">Card title</h5>
+											<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+										</div>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-3">
+							<a href="#">
+								<div class="card">
+									<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/8.jpg" alt="Card image cap">
+									<div class="overlay">
+										<div class="text">
+											<h5 class="card-title">Card title</h5>
+											<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+										</div>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-3">
+							<a href="#">
+								<div class="card">
+									<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/8.jpg" alt="Card image cap">
+									<div class="overlay">
+										<div class="text">
+											<h5 class="card-title">Card title</h5>
+											<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+										</div>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-3">
+							<a href="#">
+								<div class="card">
+									<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/8.jpg" alt="Card image cap">
+									<div class="overlay">
+										<div class="text">
+											<h5 class="card-title">Card title</h5>
+											<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+										</div>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="list-item-4">
+					<div class="title-head">
+						<h1>List Item 4</h1>
+						<img src="img/header-img.png" >
+					</div>
+					<div class="row">
+						<div class="col-md-3">
+							<a href="#">
+								<div class="card">
+									<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/8.jpg" alt="Card image cap">
+									<div class="overlay">
+										<div class="text">
+											<h5 class="card-title">Card title</h5>
+											<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+										</div>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-3">
+							<a href="#">
+								<div class="card">
+									<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/8.jpg" alt="Card image cap">
+									<div class="overlay">
+										<div class="text">
+											<h5 class="card-title">Card title</h5>
+											<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+										</div>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-3">
+							<a href="#">
+								<div class="card">
+									<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/8.jpg" alt="Card image cap">
+									<div class="overlay">
+										<div class="text">
+											<h5 class="card-title">Card title</h5>
+											<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+										</div>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-3">
+							<a href="#">
+								<div class="card">
+									<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/8.jpg" alt="Card image cap">
+									<div class="overlay">
+										<div class="text">
+											<h5 class="card-title">Card title</h5>
+											<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+										</div>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="list-item-5">
+					<div class="title-head">
+						<h1>List Item 5</h1>
+						<img src="img/header-img.png" >
+					</div>
+					<div class="row">
+						<div class="col-md-3">
+							<a href="#">
+								<div class="card">
+									<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/8.jpg" alt="Card image cap">
+									<div class="overlay">
+										<div class="text">
+											<h5 class="card-title">Card title</h5>
+											<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+										</div>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-3">
+							<a href="#">
+								<div class="card">
+									<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/8.jpg" alt="Card image cap">
+									<div class="overlay">
+										<div class="text">
+											<h5 class="card-title">Card title</h5>
+											<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+										</div>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-3">
+							<a href="#">
+								<div class="card">
+									<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/8.jpg" alt="Card image cap">
+									<div class="overlay">
+										<div class="text">
+											<h5 class="card-title">Card title</h5>
+											<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+										</div>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-3">
+							<a href="#">
+								<div class="card">
+									<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/8.jpg" alt="Card image cap">
+									<div class="overlay">
+										<div class="text">
+											<h5 class="card-title">Card title</h5>
+											<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+										</div>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="list-item-6">
+					<div class="title-head">
+						<h1>List Item 6</h1>
+						<img src="img/header-img.png" >
+					</div>
+					<div class="row">
+						<div class="col-md-3">
+							<a href="#">
+								<div class="card">
+									<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/8.jpg" alt="Card image cap">
+									<div class="overlay">
+										<a href="#" class="icon" title="User Profile">
+											<i class="fa fa-user"></i>
+										</a>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-3">
+							<a href="#">
+								<div class="card">
+									<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/8.jpg" alt="Card image cap">
+									<div class="overlay">
+										<a href="#" class="icon" title="User Profile">
+											<i class="fa fa-user"></i>
+										</a>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-3">
+							<a href="#">
+								<div class="card">
+									<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/8.jpg" alt="Card image cap">
+									<div class="overlay">
+										<a href="#" class="icon" title="User Profile">
+											<i class="fa fa-user"></i>
+										</a>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-3">
+							<a href="#">
+								<div class="card">
+									<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/8.jpg" alt="Card image cap">
+									<div class="overlay">
+										<a href="#" class="icon" title="User Profile">
+											<i class="fa fa-user"></i>
+										</a>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="list-item-7">
+					<div class="title-head">
+						<h1>List Item 7</h1>
+						<img src="img/header-img.png" >
+					</div>
+					<div class="row">
+						<div class="col-md-3">
+							<a href="#">
+								<div class="card">
+									<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/8.jpg" alt="Card image cap">
+									<div class="overlay">
+										<div class="text">
+											<h5 class="card-title">Card title</h5>
+											<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+										</div>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-3">
+							<a href="#">
+								<div class="card">
+									<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/8.jpg" alt="Card image cap">
+									<div class="overlay">
+										<div class="text">
+											<h5 class="card-title">Card title</h5>
+											<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+										</div>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-3">
+							<a href="#">
+								<div class="card">
+									<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/8.jpg" alt="Card image cap">
+									<div class="overlay">
+										<div class="text">
+											<h5 class="card-title">Card title</h5>
+											<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+										</div>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-3">
+							<a href="#">
+								<div class="card">
+									<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/8.jpg" alt="Card image cap">
+									<div class="overlay">
+										<div class="text">
+											<h5 class="card-title">Card title</h5>
+											<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+										</div>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="list-item-8">
+					<div class="title-head">
+						<h1>List Item 8</h1>
+						<img src="img/header-img.png" >
+					</div>
+					<div class="row">
+						<div class="col-md-3">
+							<a href="#">
+								<div class="card">
+									<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/8.jpg" alt="Card image cap">
+									<div class="card-body">
+										<h5 class="card-title">Card title</h5>
+										<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+									</div>
+									<div class="card-footer">
+										<small class="text-muted">Last updated 3 mins ago</small>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-3">
+							<a href="#">
+								<div class="card">
+									<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/8.jpg" alt="Card image cap">
+									<div class="card-body">
+										<h5 class="card-title">Card title</h5>
+										<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+									</div>
+									<div class="card-footer">
+										<small class="text-muted">Last updated 3 mins ago</small>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-3">
+							<a href="#">
+								<div class="card">
+									<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/8.jpg" alt="Card image cap">
+									<div class="card-body">
+										<h5 class="card-title">Card title</h5>
+										<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+									</div>
+									<div class="card-footer">
+										<small class="text-muted">Last updated 3 mins ago</small>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-3">
+							<a href="#">
+								<div class="card">
+									<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/8.jpg" alt="Card image cap">
+									<div class="card-body">
+										<h5 class="card-title">Card title</h5>
+										<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+									</div>
+									<div class="card-footer">
+										<small class="text-muted">Last updated 3 mins ago</small>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="list-item-9">
+					<div class="title-head">
+						<h1>List Item 9</h1>
+						<img src="img/header-img.png"  >
+					</div>
+					<div class="row">
+						<div class="col-md-3">
+							<a href="#">
+								<div class="card">
+									<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/8.jpg" alt="Card image cap">
+									<div class="card-content">
+										<h5 class="card-title">Card title</h5>
+										<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-3">
+							<a href="#">
+								<div class="card">
+									<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/8.jpg" alt="Card image cap">
+									<div class="card-content">
+										<h5 class="card-title">Card title</h5>
+										<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-3">
+							<a href="#">
+								<div class="card">
+									<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/8.jpg" alt="Card image cap">
+									<div class="card-content">
+										<h5 class="card-title">Card title</h5>
+										<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-3">
+							<a href="#">
+								<div class="card">
+									<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/8.jpg" alt="Card image cap">
+									<div class="card-content">
+										<h5 class="card-title">Card title</h5>
+										<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="list-item-10">
+					<div class="title-head">
+						<h1>List Item 10</h1>
+						<img src="img/header-img.png" >
+					</div>
+					<div class="row">
+						<div class="col-md-3">
+							<a href="#">
+								<div class="card">
+									<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/8.jpg" alt="Card image cap">
+									<div class="card-body">
+										<h5 class="card-title">Card title</h5>
+										<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+									</div>
+									<div class="card-footer">
+										<small class="text-muted">Last updated 3 mins ago</small>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-3">
+							<a href="#">
+								<div class="card">
+									<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/8.jpg" alt="Card image cap">
+									<div class="card-body">
+										<h5 class="card-title">Card title</h5>
+										<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+									</div>
+									<div class="card-footer">
+										<small class="text-muted">Last updated 3 mins ago</small>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-3">
+							<a href="#">
+								<div class="card">
+									<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/8.jpg" alt="Card image cap">
+									<div class="card-body">
+										<h5 class="card-title">Card title</h5>
+										<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+									</div>
+									<div class="card-footer">
+										<small class="text-muted">Last updated 3 mins ago</small>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-3">
+							<a href="#">
+								<div class="card">
+									<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/8.jpg" alt="Card image cap">
+									<div class="card-body">
+										<h5 class="card-title">Card title</h5>
+										<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+									</div>
+									<div class="card-footer">
+										<small class="text-muted">Last updated 3 mins ago</small>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="list-item-11">
+					<div class="title-head">
+						<h1>List Item 11</h1>
+						<img src="img/header-img.png" >
+					</div>
+					<div class="row">
+						<div class="col-md-3">
+							<a href="#">
+								<div class="card">
+									<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/8.jpg" alt="Card image cap">
+									<div class="overlay">
+										<div class="middle">
+											<div class="text">
+												<h5 class="card-title">Card title</h5>
+												<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+											</div>
+										  </div>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-3">
+							<a href="#">
+								<div class="card">
+									<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/8.jpg" alt="Card image cap">
+									<div class="overlay">
+										<div class="middle">
+											<div class="text">
+												<h5 class="card-title">Card title</h5>
+												<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+											</div>
+										  </div>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-3">
+							<a href="#">
+								<div class="card">
+									<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/8.jpg" alt="Card image cap">
+									<div class="overlay">
+										<div class="middle">
+											<div class="text">
+												<h5 class="card-title">Card title</h5>
+												<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+											</div>
+										  </div>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-3">
+							<a href="#">
+								<div class="card">
+									<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/8.jpg" alt="Card image cap">
+									<div class="overlay">
+										<div class="middle">
+											<div class="text">
+												<h5 class="card-title">Card title</h5>
+												<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+											</div>
+										  </div>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="list-item-12">
+					<div class="title-head">
+						<h1>List Item 12</h1>
+						<img src="img/header-img.png" >
+					</div>
+					<div class="row">
+						<div class="col-md-3">
+							<a href="#">
+								<div class="card">
+									<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/8.jpg" alt="Card image cap">
+									<div class="card-body">
+										<h5 class="card-title">Card title</h5>
+										<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+									</div>
+									<div class="card-footer">
+										<small class="text-muted">Last updated 3 mins ago</small>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-3">
+							<a href="#">
+								<div class="card">
+									<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/8.jpg" alt="Card image cap">
+									<div class="card-body">
+										<h5 class="card-title">Card title</h5>
+										<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+									</div>
+									<div class="card-footer">
+										<small class="text-muted">Last updated 3 mins ago</small>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-3">
+							<a href="#">
+								<div class="card">
+									<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/8.jpg" alt="Card image cap">
+									<div class="card-body">
+										<h5 class="card-title">Card title</h5>
+										<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+									</div>
+									<div class="card-footer">
+										<small class="text-muted">Last updated 3 mins ago</small>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-3">
+							<a href="#">
+								<div class="card">
+									<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/8.jpg" alt="Card image cap">
+									<div class="card-body">
+										<h5 class="card-title">Card title</h5>
+										<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+									</div>
+									<div class="card-footer">
+										<small class="text-muted">Last updated 3 mins ago</small>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="list-item-13">
+					<div class="title-head">
+						<h1>List Item 13</h1>
+						<img src="img/header-img.png" >
+					</div>
+					<div class="row">
+						<div class="col-md-3">
+							<a href="#">
+								<div class="card">
+									<div class="img-hover-zoom">
+										<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/8.jpg" alt="Card image cap">
+									</div>
+									<div class="card-body">
+										<h5 class="card-title">Card title</h5>
+										<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+									</div>
+									<div class="card-footer">
+										<small class="text-muted">Last updated 3 mins ago</small>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-3">
+							<a href="#">
+								<div class="card">
+									<div class="img-hover-zoom">
+										<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/8.jpg" alt="Card image cap">
+									</div>
+									<div class="card-body">
+										<h5 class="card-title">Card title</h5>
+										<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+									</div>
+									<div class="card-footer">
+										<small class="text-muted">Last updated 3 mins ago</small>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-3">
+							<a href="#">
+								<div class="card">
+									<div class="img-hover-zoom">
+										<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/8.jpg" alt="Card image cap">
+									</div>
+									<div class="card-body">
+										<h5 class="card-title">Card title</h5>
+										<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+									</div>
+									<div class="card-footer">
+										<small class="text-muted">Last updated 3 mins ago</small>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-3">
+							<a href="#">
+								<div class="card">
+									<div class="img-hover-zoom">
+										<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/8.jpg" alt="Card image cap">
+									</div>
+									<div class="card-body">
+										<h5 class="card-title">Card title</h5>
+										<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+									</div>
+									<div class="card-footer">
+										<small class="text-muted">Last updated 3 mins ago</small>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="list-item-14">
+					<div class="title-head">
+						<h1>List Item 14</h1>
+						<img src="img/header-img.png" >
+					</div>
+					<div class="row">
+						<div class="col-md-3">
+							<a href="#">
+								<div class="card">
+									<div class="img-hover-zoom">
+										<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/8.jpg" alt="Card image cap">
+									</div>
+									<div class="card-body">
+										<h5 class="card-title">Card title</h5>
+										<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+									</div>
+									<div class="card-footer">
+										<small class="text-muted">Last updated 3 mins ago</small>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-3">
+							<a href="#">
+								<div class="card">
+									<div class="img-hover-zoom">
+										<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/8.jpg" alt="Card image cap">
+									</div>
+									<div class="card-body">
+										<h5 class="card-title">Card title</h5>
+										<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+									</div>
+									<div class="card-footer">
+										<small class="text-muted">Last updated 3 mins ago</small>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-3">
+							<a href="#">
+								<div class="card">
+									<div class="img-hover-zoom">
+										<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/8.jpg" alt="Card image cap">
+									</div>
+									<div class="card-body">
+										<h5 class="card-title">Card title</h5>
+										<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+									</div>
+									<div class="card-footer">
+										<small class="text-muted">Last updated 3 mins ago</small>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-3">
+							<a href="#">
+								<div class="card">
+									<div class="img-hover-zoom">
+										<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/8.jpg" alt="Card image cap">
+									</div>
+									<div class="card-body">
+										<h5 class="card-title">Card title</h5>
+										<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+									</div>
+									<div class="card-footer">
+										<small class="text-muted">Last updated 3 mins ago</small>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="list-item-15">
+					<div class="title-head">
+						<h1>List Item 15</h1>
+						<img src="img/header-img.png" >
+					</div>
+					<div class="row">
+						<div class="col-md-3">
+							<a href="#">
+								<div class="card">
+									<div class="img-hover-zoom">
+										<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/8.jpg" alt="Card image cap">
+									</div>
+									<div class="card-body">
+										<h5 class="card-title">Card title</h5>
+										<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+									</div>
+									<div class="card-footer">
+										<small class="text-muted">Last updated 3 mins ago</small>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-3">
+							<a href="#">
+								<div class="card">
+									<div class="img-hover-zoom">
+										<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/8.jpg" alt="Card image cap">
+									</div>
+									<div class="card-body">
+										<h5 class="card-title">Card title</h5>
+										<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+									</div>
+									<div class="card-footer">
+										<small class="text-muted">Last updated 3 mins ago</small>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-3">
+							<a href="#">
+								<div class="card">
+									<div class="img-hover-zoom">
+										<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/8.jpg" alt="Card image cap">
+									</div>
+									<div class="card-body">
+										<h5 class="card-title">Card title</h5>
+										<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+									</div>
+									<div class="card-footer">
+										<small class="text-muted">Last updated 3 mins ago</small>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-3">
+							<a href="#">
+								<div class="card">
+									<div class="img-hover-zoom">
+										<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/8.jpg" alt="Card image cap">
+									</div>
+									<div class="card-body">
+										<h5 class="card-title">Card title</h5>
+										<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+									</div>
+									<div class="card-footer">
+										<small class="text-muted">Last updated 3 mins ago</small>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="list-item-16">
+					<div class="title-head">
+						<h1>List Item 16</h1>
+						<img src="img/header-img.png" >
+					</div>
+					<div class="row">
+						<div class="col-md-3">
+							<a href="#">
+								<div class="card">
+									<div class="img-hover-zoom">
+										<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/8.jpg" alt="Card image cap">
+									</div>
+									<div class="card-body">
+										<h5 class="card-title">Card title</h5>
+										<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+									</div>
+									<div class="card-footer">
+										<small class="text-muted">Last updated 3 mins ago</small>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-3">
+							<a href="#">
+								<div class="card">
+									<div class="img-hover-zoom">
+										<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/8.jpg" alt="Card image cap">
+									</div>
+									<div class="card-body">
+										<h5 class="card-title">Card title</h5>
+										<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+									</div>
+									<div class="card-footer">
+										<small class="text-muted">Last updated 3 mins ago</small>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-3">
+							<a href="#">
+								<div class="card">
+									<div class="img-hover-zoom">
+										<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/8.jpg" alt="Card image cap">
+									</div>
+									<div class="card-body">
+										<h5 class="card-title">Card title</h5>
+										<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+									</div>
+									<div class="card-footer">
+										<small class="text-muted">Last updated 3 mins ago</small>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-3">
+							<a href="#">
+								<div class="card">
+									<div class="img-hover-zoom">
+										<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/8.jpg" alt="Card image cap">
+									</div>
+									<div class="card-body">
+										<h5 class="card-title">Card title</h5>
+										<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+									</div>
+									<div class="card-footer">
+										<small class="text-muted">Last updated 3 mins ago</small>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="list-item-17">
+					<div class="title-head">
+						<h1>List Item 17</h1>
+						<img src="img/header-img.png" >
+					</div>
+					<div class="row">
+						<div class="col-md-3">
+							<a href="#">
+								<div class="card">
+									<div class="img-hover-zoom">
+										<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/8.jpg" alt="Card image cap">
+									</div>
+									<div class="card-body">
+										<h5 class="card-title">Card title</h5>
+										<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+									</div>
+									<div class="card-footer">
+										<small class="text-muted">Last updated 3 mins ago</small>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-3">
+							<a href="#">
+								<div class="card">
+									<div class="img-hover-zoom">
+										<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/8.jpg" alt="Card image cap">
+									</div>
+									<div class="card-body">
+										<h5 class="card-title">Card title</h5>
+										<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+									</div>
+									<div class="card-footer">
+										<small class="text-muted">Last updated 3 mins ago</small>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-3">
+							<a href="#">
+								<div class="card">
+									<div class="img-hover-zoom">
+										<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/8.jpg" alt="Card image cap">
+									</div>
+									<div class="card-body">
+										<h5 class="card-title">Card title</h5>
+										<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+									</div>
+									<div class="card-footer">
+										<small class="text-muted">Last updated 3 mins ago</small>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-3">
+							<a href="#">
+								<div class="card">
+									<div class="img-hover-zoom">
+										<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/8.jpg" alt="Card image cap">
+									</div>
+									<div class="card-body">
+										<h5 class="card-title">Card title</h5>
+										<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+									</div>
+									<div class="card-footer">
+										<small class="text-muted">Last updated 3 mins ago</small>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="list-item-18">
+					<div class="title-head">
+						<h1>List Item 18</h1>
+						<img src="img/header-img.png" >
+					</div>
+					<div class="row">
+						<div class="col-md-3">
+							<a href="#">
+								<div class="card">
+									<div class="img-hover-zoom">
+										<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/8.jpg" alt="Card image cap">
+									</div>
+									<div class="card-body">
+										<h5 class="card-title">Card title</h5>
+										<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+									</div>
+									<div class="card-footer">
+										<small class="text-muted">Last updated 3 mins ago</small>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-3">
+							<a href="#">
+								<div class="card">
+									<div class="img-hover-zoom">
+										<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/8.jpg" alt="Card image cap">
+									</div>
+									<div class="card-body">
+										<h5 class="card-title">Card title</h5>
+										<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+									</div>
+									<div class="card-footer">
+										<small class="text-muted">Last updated 3 mins ago</small>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-3">
+							<a href="#">
+								<div class="card">
+									<div class="img-hover-zoom">
+										<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/8.jpg" alt="Card image cap">
+									</div>
+									<div class="card-body">
+										<h5 class="card-title">Card title</h5>
+										<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+									</div>
+									<div class="card-footer">
+										<small class="text-muted">Last updated 3 mins ago</small>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-3">
+							<a href="#">
+								<div class="card">
+									<div class="img-hover-zoom">
+										<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/8.jpg" alt="Card image cap">
+									</div>
+									<div class="card-body">
+										<h5 class="card-title">Card title</h5>
+										<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+									</div>
+									<div class="card-footer">
+										<small class="text-muted">Last updated 3 mins ago</small>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="list-item-19">
+					<div class="title-head">
+						<h1>List Item 19</h1>
+						<img src="img/header-img.png" >
+					</div>
+					<div class="row">
+						<div class="col-md-3">
+							<a href="#">
+								<div class="card">
+									<div class="img-hover-zoom">
+										<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/8.jpg" alt="Card image cap">
+									</div>
+									<div class="card-body">
+										<h5 class="card-title">Card title</h5>
+										<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+									</div>
+									<div class="card-footer">
+										<small class="text-muted">Last updated 3 mins ago</small>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-3">
+							<a href="#">
+								<div class="card">
+									<div class="img-hover-zoom">
+										<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/8.jpg" alt="Card image cap">
+									</div>
+									<div class="card-body">
+										<h5 class="card-title">Card title</h5>
+										<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+									</div>
+									<div class="card-footer">
+										<small class="text-muted">Last updated 3 mins ago</small>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-3">
+							<a href="#">
+								<div class="card">
+									<div class="img-hover-zoom">
+										<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/8.jpg" alt="Card image cap">
+									</div>
+									<div class="card-body">
+										<h5 class="card-title">Card title</h5>
+										<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+									</div>
+									<div class="card-footer">
+										<small class="text-muted">Last updated 3 mins ago</small>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-3">
+							<a href="#">
+								<div class="card">
+									<div class="img-hover-zoom">
+										<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/8.jpg" alt="Card image cap">
+									</div>
+									<div class="card-body">
+										<h5 class="card-title">Card title</h5>
+										<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+									</div>
+									<div class="card-footer">
+										<small class="text-muted">Last updated 3 mins ago</small>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="list-item-20">
+					<div class="title-head">
+						<h1>List Item 20</h1>
+						<img src="img/header-img.png" >
+					</div>
+					<div class="row">
+						<div class="col-md-3">
+							<a href="#">
+								<div class="card">
+									<div class="img-hover-zoom">
+										<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/8.jpg" alt="Card image cap">
+									</div>
+									<div class="card-body">
+										<h5 class="card-title">Card title</h5>
+										<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+									</div>
+									<div class="card-footer">
+										<small class="text-muted">Last updated 3 mins ago</small>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-3">
+							<a href="#">
+								<div class="card">
+									<div class="img-hover-zoom">
+										<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/8.jpg" alt="Card image cap">
+									</div>
+									<div class="card-body">
+										<h5 class="card-title">Card title</h5>
+										<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+									</div>
+									<div class="card-footer">
+										<small class="text-muted">Last updated 3 mins ago</small>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-3">
+							<a href="#">
+								<div class="card">
+									<div class="img-hover-zoom">
+										<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/8.jpg" alt="Card image cap">
+									</div>
+									<div class="card-body">
+										<h5 class="card-title">Card title</h5>
+										<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+									</div>
+									<div class="card-footer">
+										<small class="text-muted">Last updated 3 mins ago</small>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-3">
+							<a href="#">
+								<div class="card">
+									<div class="img-hover-zoom">
+										<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/8.jpg" alt="Card image cap">
+									</div>
+									<div class="card-body">
+										<h5 class="card-title">Card title</h5>
+										<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+									</div>
+									<div class="card-footer">
+										<small class="text-muted">Last updated 3 mins ago</small>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="list-item-21">
+					<div class="title-head">
+						<h1>List Item 9</h1>
+						<img src="img/header-img.png"  >
+					</div>
+					<div class="row">
+						<div class="col-md-3">
+							<a href="#">
+								<div class="card">
+									<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/8.jpg" alt="Card image cap">
+									<div class="card-content">
+										<h5 class="card-title">Card title</h5>
+										<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-3">
+							<a href="#">
+								<div class="card">
+									<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/8.jpg" alt="Card image cap">
+									<div class="card-content">
+										<h5 class="card-title">Card title</h5>
+										<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-3">
+							<a href="#">
+								<div class="card">
+									<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/8.jpg" alt="Card image cap">
+									<div class="card-content">
+										<h5 class="card-title">Card title</h5>
+										<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-3">
+							<a href="#">
+								<div class="card">
+									<img class="card-img-top" src="https://azmind.com/demo/bootstrap-carousel-multiple-items/assets/img/backgrounds/8.jpg" alt="Card image cap">
+									<div class="card-content">
+										<h5 class="card-title">Card title</h5>
+										<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div id="top-button"></div>
+				<div>
+					<div class="title-head">
+						<h1>Button</h1>
+						<img src="img/header-img.png" >
+					</div>
+					<button class="custom-btn btn-1">Gold</button>
+					<button class="custom-btn btn-2">Gold</button>
+					<button class="custom-btn btn-3">Gold</button>
+					<button class="custom-btn btn-4">Gold</button>
+					<button class="custom-btn btn-5">Silver</button>
+					<button class="custom-btn btn-6">Silver</button>
+					<button class="custom-btn btn-7">Silver</button>
+					<button class="custom-btn btn-8">Silver</button>
+					<button class="custom-btn btn-9">Rose</button>
+					<button class="custom-btn btn-10">Rose</button>
+					<button class="custom-btn btn-11">Rose<div class="dot"></div></button>
+					<button class="custom-btn btn-12">Rose</button>
+					<button class="custom-btn btn-13">Black</button>
+					<button class="custom-btn btn-14">Black</button>
+					<button class="custom-btn btn-15">Black</button>
+					<button class="custom-btn btn-16">Black</button>
+					<h1>loai 2</h1>
+					<button class="btn-hover color-1">Đăng nhập</button>
+					<button class="btn-hover color-2">BUTTON</button>
+					<button class="btn-hover color-3">BUTTON</button>
+					<button class="btn-hover color-4">BUTTON</button>
+					<button class="btn-hover color-5">BUTTON</button>
+					<button class="btn-hover color-6">BUTTON</button>
+					<button class="btn-hover color-7">BUTTON</button>
+					<button class="btn-hover color-8">BUTTON</button>
+					<button class="btn-hover color-9">BUTTON</button>
+					<button class="btn-hover color-10">BUTTON</button>
+					<button class="btn-hover color-11">BUTTON</button>
+					<h1>loai 3</h1>
+					<button class="button-hover-2 fill">Fill In</button>
+					<button class="button-hover-2 pulse">Pulse</button>
+					<!-- <button class="button-hover-2 close">Close</button> -->
+					<button class="button-hover-2 raise">Raise</button>
+					<button class="button-hover-2 up">Fill Up</button>
+					<button class="button-hover-2 slide">Slide</button>
+					<button class="button-hover-2 offset">Offset</button>
+					<h1>loai 4</h1>
+					<a href="#" class="rainbow-button" alt="Button"></a>
+					<h1>loai 5</h1>
+					<div class="badge yellow">
+						<div class="circle"> <i class="fa fa-bolt"></i></div>
+						<div class="ribbon">Initiator</div>
+					</div>
+					<div class="badge orange">
+						<div class="circle"> <i class="fa fa-wheelchair-alt"></i></div>
+						<div class="ribbon">Disabler</div>
+					</div>
+					<div class="badge pink">
+						<div class="circle"> <i class="fa fa-pied-piper"></i></div>
+						<div class="ribbon">Nuker</div>
+					</div>
+					<div class="badge red">
+						<div class="circle"> <i class="fa fa-shield"></i></div>
+						<div class="ribbon">Ganker</div>
+					</div>
+					<div class="badge purple">
+						<div class="circle"> <i class="fa fa-anchor"></i></div>
+						<div class="ribbon">Durable</div>
+					</div>
+					<div class="badge teal">
+						<div class="circle"> <i class="fa fa-bicycle"></i></div>
+						<div class="ribbon">Roamer</div>
+					</div>
+					<div class="badge blue">
+						<div class="circle"> <i class="fa fa-users"></i></div>
+						<div class="ribbon">Pusher</div>
+					</div>
+					<div class="badge blue-dark">
+						<div class="circle"> <i class="fa fa-rocket"></i></div>
+						<div class="ribbon">Escape</div>
+					</div>
+					<div class="badge green">
+						<div class="circle"> <i class="fa fa-tree"></i></div>
+						<div class="ribbon">Jungler</div>
+					</div>
+					<div class="badge green-dark">
+						<div class="circle"> <i class="fa fa-user fa-street-view"></i></div>
+						<div class="ribbon">Offlaner</div>
+					</div>
+					<div class="badge silver">
+						<div class="circle"> <span class="font">AFK</span></div>
+						<div class="ribbon">Carry</div>
+					</div>
+					<div class="badge gold">
+						<div class="circle"> <i class="fa fa-magic"></i></div>
+						<div class="ribbon">Support</div>
+					</div>
+					<h1>loai 6</h1>
+					<a href="#" class="glowing-button">
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+						Glowing button
+					</a>
+					<a href="#" class="glowing-button">
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+						Glowing button
+					</a>
+					<a href="#" class="glowing-button">
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+						Glowing button
+					</a>
+					<h1>loai 7</h1>
+					<button class="animation-buttons btn-animation-buttons-1">Read More</button>
+					<button class="animation-buttons btn-animation-buttons-2">Read More</button>
+					<button class="animation-buttons btn-animation-buttons-3"><span>Read More</span></button>
+					<button class="animation-buttons btn-animation-buttons-4"><span>Read More</span></button>
+					<button class="animation-buttons btn-animation-buttons-5"><span>Read More</span></button>
+					<button class="animation-buttons btn-animation-buttons-6"><span>Read More</span></button>
+					<button class="animation-buttons btn-animation-buttons-7"><span>Read More</span></button>
+					<button class="animation-buttons btn-animation-buttons-8"><span>Read More</span></button>
+					<button class="animation-buttons btn-animation-buttons-9">Read More</button>
+					<button class="animation-buttons btn-animation-buttons-10">Read More</button>
+					<button class="animation-buttons btn-animation-buttons-11">Read More<div class="dot"></div></button>
+					<button class="animation-buttons btn-animation-buttons-12"><span>Click!</span><span>Read More</span></button>
+					<button class="animation-buttons btn-animation-buttons-13">Read More</button>
+					<button class="animation-buttons btn-animation-buttons-14">Read More</button>
+					<button class="animation-buttons btn-animation-buttons-15">Read More</button>
+					<button class="animation-buttons btn-animation-buttons-16">Read More</button>
+				</div>
+			</div>
+		</div>
+		<div class="footer">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-3">
+						<div class="menu-vertical-basic">
+							<ul>
+								<li>
+									<a href="">
+										<div class="logo">
+											<img src="data:image/png;base64,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" >
+											<p class="title">Tên cửa hàng</p>
+										</div>
+									</a>
+								</li>
+								<li></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-md-3">
+						<div class="menu-vertical-basic">
+							<h3 class="title-menu">Đường tắt</h3>
+							<br/>
+							<ul>
+								<li>
+									<a href="#">Tên cửa hàng</a>
+								</li>
+								<li>
+									<a href="#">Tên cửa hàng</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-md-3">
+						<div class="menu-vertical-basic">
+							<h3 class="title-menu">Đường tắt</h3>
+							<br/>
+							<ul>
+								<li>
+									<a href="#">Tên cửa hàng</a>
+								</li>
+								<li>
+									<a href="#">Tên cửa hàng</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-md-3">
+						<div class="menu-vertical-basic">
+							<h3 class="title-menu">Liên hệ </h3>
+							<br/>
+							<ul>
+								<li>
+									<b>Số điện thoại: </b><a href="#"> 0834 669 814</a>
+								</li>
+								<li>
+									<b>Địa chỉ :</b> Vĩnh Phú, Thoại Sơn, An Giang.
+								</li>
+								<li>
+									<div class="list-icon">
+										<b class="title-icon">Hãy liên hệ:</b>
+										<a href="#" class="icon bg-primary"><i class="fa fa-facebook"></i></a> 
+										<a href="#" class="icon bg-warning"><i class="fa fa-twitter"></i></i></a> 
+										<a href="#" class="icon bg-danger"><i class="fa fa-youtube-play"></i></a> 
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="sidenav_menu" class="sidenav_menu"></div>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+	<script src="js/script.js"></script>
+</body>
+</html>
